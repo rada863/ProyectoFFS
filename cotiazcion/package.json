@@ -10,14 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.2.4",
-    "@chakra-ui/react": "^3.30.0",
+    "@chakra-ui/button": "^2.1.0",
+    "@chakra-ui/form-control": "^2.2.0",
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/input": "^2.1.2",
+    "@chakra-ui/number-input": "^2.1.2",
+    "@chakra-ui/react": "^2.8.1",
+    "@chakra-ui/select": "^2.1.2",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "esbuild": "^0.27.2",
+    "formik": "^2.4.9",
     "framer-motion": "^12.23.26",
+    "jspdf": "^3.0.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.10.1"
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.10.1",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

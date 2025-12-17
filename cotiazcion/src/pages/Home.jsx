@@ -1,0 +1,27 @@
+import { Box, Button, Heading, Text, VStack } from '@chakra-ui/react'
+import { Link as RouterLink } from 'react-router-dom'
+
+const Home = () => {
+  return (
+    <Box textAlign="center" py={10}>
+      <VStack spacing={6}>
+        <Heading as="h1" size="2xl">
+          Simulador de Seguros para Hogar
+        </Heading>
+        <Text fontSize="xl" color="gray.600" maxW="2xl">
+          Obtén una cotización personalizada en minutos. Protege tu hogar con la mejor cobertura.
+        </Text>
+        <Button
+          as={RouterLink}
+          to="/form"
+          colorScheme="blue"
+          size="lg"
+        >
+          Comenzar Cotización
+        </Button>
+      </VStack>
+    </Box>
+  )
+}
+
+export default Home
