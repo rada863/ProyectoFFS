@@ -125,6 +125,27 @@ export const QuoteProvider = ({ children }) => {
     return options
   }
 
+  // 👇 Nueva función para guardar cotizaciones en localStorage
+  const saveQuoteToHistory = (quote) => {
+    const storedQuotes = JSON.parse(localStorage.getItem("quotesHistory")) || []
+
+    const newQuote = {
+      id: storedQuotes.length + 1,
+      nombre: userData.nombre || "No proporcionado",
+      edad: userData.edad || "No proporcionado",
+      tipoPropiedad: userData.tipoPropiedad,
+      valorPropiedad: userData.valorPropiedad,
+      coverage: quote.name,
+      monthlyPrice: quote.monthlyPrice,
+      yearlyPrice: quote.yearlyPrice,
+      deductible: quote.deductible,
+      fecha: new Date().toLocaleString()
+    }
+
+    storedQuotes.push(newQuote)
+    localStorage.setItem("quotesHistory", JSON.stringify(storedQuotes))
+  }
+
   return (
     <QuoteContext.Provider value={{
       userData,
@@ -132,7 +153,8 @@ export const QuoteProvider = ({ children }) => {
       selectedCoverage,
       setSelectedCoverage,
       updateUserData,
-      calculateInsuranceOptions
+      calculateInsuranceOptions,
+      saveQuoteToHistory  
     }}>
       {children}
     </QuoteContext.Provider>

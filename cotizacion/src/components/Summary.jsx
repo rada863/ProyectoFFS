@@ -21,11 +21,14 @@ import { CheckCircleIcon, ChevronLeftIcon, DownloadIcon } from '@chakra-ui/icons
 import { MdPrint } from 'react-icons/md'
 import { jsPDF } from 'jspdf'
 import { useQuote } from '../context/QuoteContext'
+import QuoteHistory from "../components/QuoteHistory"
 
 const Summary = () => {
   const navigate = useNavigate()
   const toast = useToast()
-  const { userData, selectedCoverage } = useQuote()
+
+  // 👇 obtenemos todo del contexto
+  const { userData, selectedCoverage, saveQuoteToHistory } = useQuote()
 
   const handlePrint = () => {
     window.print()
@@ -73,6 +76,11 @@ const Summary = () => {
   }
 
   const handlePurchase = () => {
+    if (!selectedCoverage) return
+
+    // 👇 Guardar en historial
+    saveQuoteToHistory(selectedCoverage)
+
     toast({
       title: '¡Cotización contratada!',
       description: 'Pronto nos pondremos en contacto con usted para finalizar el proceso',
@@ -111,6 +119,7 @@ const Summary = () => {
   return (
     <Box>
       <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8}>
+        {/* Información del cliente */}
         <Card>
           <CardBody>
             <Heading size="md" mb={4}>
@@ -137,6 +146,7 @@ const Summary = () => {
           </CardBody>
         </Card>
 
+        {/* Resumen de cobertura */}
         <Card>
           <CardBody>
             <Heading size="md" mb={4}>
@@ -185,6 +195,7 @@ const Summary = () => {
         </Card>
       </SimpleGrid>
 
+      {/* Aviso importante */}
       <Alert status="warning" variant="left-accent" mt={8}>
         <AlertIcon />
         <Box>
@@ -195,6 +206,7 @@ const Summary = () => {
         </Box>
       </Alert>
 
+      {/* Botones de acción */}
       <HStack spacing={4} justify="space-between" mt={8}>
         <Button leftIcon={<ChevronLeftIcon />} variant="outline" onClick={handleBack}>
           Cambiar Cobertura
@@ -212,8 +224,18 @@ const Summary = () => {
           <Button colorScheme="blue" onClick={handlePurchase}>
             Contratar Ahora
           </Button>
+
+          <Button colorScheme="teal" onClick={() => navigate('/history')}>
+            Ver Historial
+          </Button>
         </HStack>
       </HStack>
+
+      {/* 👇 Mostrar historial directamente debajo del resumen */}
+      <Box mt={10}>
+        <Heading size="md" mb={4}>Historial de Cotizaciones</Heading>
+        <QuoteHistory />
+      </Box>
     </Box>
   )
 }

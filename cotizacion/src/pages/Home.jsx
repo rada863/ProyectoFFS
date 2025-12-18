@@ -11,6 +11,8 @@ const Home = () => {
         <Text fontSize="xl" color="gray.600" maxW="2xl">
           Obtén una cotización personalizada en minutos. Protege tu hogar con la mejor cobertura.
         </Text>
+
+        {/* Botón para iniciar nueva cotización */}
         <Button
           as={RouterLink}
           to="/form"
@@ -18,6 +20,16 @@ const Home = () => {
           size="lg"
         >
           Comenzar Cotización
+        </Button>
+
+        {/* 👇 Nuevo botón para ver historial */}
+        <Button
+          as={RouterLink}
+          to="/history"
+          colorScheme="teal"
+          size="lg"
+        >
+          Ver Historial de Cotizaciones
         </Button>
       </VStack>
     </Box>
