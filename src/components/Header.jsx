@@ -1,4 +1,3 @@
-
 import { Box, Container, HStack, Heading, Button } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 

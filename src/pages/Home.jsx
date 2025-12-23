@@ -12,7 +12,7 @@ const Home = () => {
           Obtén una cotización personalizada en minutos. Protege tu hogar con la mejor cobertura.
         </Text>
 
-        {/* Botón para iniciar nueva cotización */}
+       
         <Button
           as={RouterLink}
           to="/form"
@@ -22,7 +22,7 @@ const Home = () => {
           Comenzar Cotización
         </Button>
 
-        {/* 👇 Nuevo botón para ver historial */}
+        
         <Button
           as={RouterLink}
           to="/history"

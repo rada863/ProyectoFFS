@@ -125,7 +125,7 @@ export const QuoteProvider = ({ children }) => {
     return options
   }
 
-  // 👇 Nueva función para guardar cotizaciones en localStorage
+  
   const saveQuoteToHistory = (quote) => {
     const storedQuotes = JSON.parse(localStorage.getItem("quotesHistory")) || []
 

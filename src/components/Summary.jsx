@@ -21,7 +21,7 @@ import { CheckCircleIcon, ChevronLeftIcon, DownloadIcon } from '@chakra-ui/icons
 import { MdPrint } from 'react-icons/md'
 import { jsPDF } from 'jspdf'
 import { useQuote } from '../context/QuoteContext'
-import QuoteHistory from "../components/QuoteHistory"
+import QuoteHistory from "./QuoteHistory"
 
 const Summary = () => {
   const navigate = useNavigate()
