@@ -1,70 +1,16 @@
-# ProyectoFFS
-# ProyectoFFS 🏠💻
+# React + Vite
 
-Simulador de Seguros para Hogar desarrollado con **React + Vite + Chakra UI**.  
-Permite al usuario ingresar datos de su vivienda, calcular diferentes opciones de cobertura, generar un resumen en PDF y mantener un historial de cotizaciones en `localStorage`.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Características principales
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- **Formulario de usuario**: captura datos como nombre, edad, tipo de propiedad, ubicación, valor, etc.
-- **Cálculo dinámico de coberturas**: opciones Básica, Estándar y Premium con precios ajustados según factores.
-- **Resumen de cotización**:
-  - Visualización clara de la cobertura seleccionada.
-  - Exportación a PDF con `jsPDF`.
-  - Opción de impresión directa.
-- **Historial de cotizaciones**:
-  - Guardado automático en `localStorage`.
-  - Visualización en tabla con Chakra UI.
-  - Botón para acceder al historial desde la página principal.
-- **UI moderna y responsiva** gracias a Chakra UI.
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📂 Estructura del proyecto
+## Expanding the ESLint configuration
 
-
-
-cotiazcion/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── UserForm.jsx
-│   │   ├── CoverageOptions.jsx
-│   │   ├── Summary.jsx
-│   │   └── Layout.jsx
-│   ├── context/
-│   │   └── QuoteContext.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── QuoteForm.jsx
-│   │   ├── CoverageSelection.jsx
-│   │   └── QuoteSummary.jsx
-│   ├── routes/
-│   │   └── index.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-├── vite.config.js
-└── README.md
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- [React](https://react.dev/) – Librería principal para la UI.
-- [Vite](https://vitejs.dev/) – Bundler rápido para desarrollo.
-- [Chakra UI](https://chakra-ui.com/) – Componentes estilizados y responsivos.
-- [React Router](https://reactrouter.com/) – Navegación entre páginas.
-- [jsPDF](https://github.com/parallax/jsPDF) – Generación de PDFs.
-
----
-
-## ⚙️ Instalación y ejecución
-
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/rada863/ProyectoFFS.git
-   cd ProyectoFFS
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
